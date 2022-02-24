@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 14:30:24 by latahbah          #+#    #+#             */
-/*   Updated: 2022/02/21 18:38:48 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/02/24 18:48:04 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 static char	*write_map(int fd)
 {
 	char	*line;
+	char	*line_tmp;
 	char	*tmp;
 
-	line = "";
+	line = NULL;
 	tmp = get_next_line(fd);
 	if (tmp == NULL)
 		end_with_desciption("GNL Error: returned NULL pointer\n");
 	while (tmp)
 	{
+		if (line == NULL)
+			line = ft_strdup("");
+		line_tmp = line;
 		line = ft_strjoin(line, tmp);
+		free(line_tmp);
+		line_tmp = line;
 		line = ft_strjoin(line, "\n");
+		free(line_tmp);
+		if (tmp)
+			free(tmp);
 		tmp = get_next_line(fd);
-	}
-	if (tmp)
-	{
-		free(tmp);
-		tmp = NULL;
 	}
 	return (line);
 }
@@ -45,7 +49,6 @@ static int	check_name(char *filename, char *ext)
 	tmp = ft_substr((const char *)filename, ft_strlen(filename) - len, len);
 	res = ft_strncmp((const char *)tmp, (const char *)ext, len);
 	free(tmp);
-	tmp = NULL;
 	if (res != 0)
 		return (1);
 	return (0);
@@ -68,6 +71,5 @@ char	**get_map(int argc, char **argv)
 	close(fd);
 	tmp = ft_split(line_map, '\n');
 	free(line_map);
-	line_map = NULL;
 	return (tmp);
 }
