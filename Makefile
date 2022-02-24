@@ -6,7 +6,7 @@
 #    By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/09 16:18:28 by latahbah          #+#    #+#              #
-#    Updated: 2022/02/24 16:37:38 by latahbah         ###   ########.fr        #
+#    Updated: 2022/02/24 17:57:05 by latahbah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIST =	main.c				end.c 					render_frame.c \
 		get_map.c			map_init.c				make_move.c \
 		check_map.c			draw_map.c
 
-LIB = libft/libft.a
+LIB = libft_new/libft.a
 
 OBJ = $(patsubst %.c,%.o,$(LIST))
 
@@ -32,7 +32,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME)::
-	@cd libft && make
+	@cd libft_new && make
 
 $(NAME):: $(OBJ)
 	@gcc $(FLAGS) $(OPTFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit $(LIB) -I. -o $(NAME)
@@ -45,13 +45,13 @@ $(NAME):: $(OBJ)
 include $(wildcard $(D_FILES))
 
 clean::
-	@cd libft && make clean
+	@cd libft_new && make clean
 
 clean::
 	@rm -f $(OBJ) $(D_FILES)
 
 fclean:: clean
-	@cd libft && make fclean
+	@cd libft_new && make fclean
 
 fclean:: clean
 	@rm -f $(NAME)

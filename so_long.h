@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:30:47 by latahbah          #+#    #+#             */
-/*   Updated: 2022/02/24 16:12:59 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:57:28 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include "libft/libft.h"
+# include "libft_new/libft.h"
 # include "get_next_line.h"
 # include <stdio.h>
 # include <fcntl.h>
