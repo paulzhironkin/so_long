@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:30:45 by latahbah          #+#    #+#             */
-/*   Updated: 2022/03/14 17:41:34 by latahbah         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:54:34 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,4 @@ int	main(int argc, char **argv)
 	mlx_loop(sl->mlx);
 	return (0);
 }
+
