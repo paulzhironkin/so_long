@@ -6,11 +6,13 @@
 #    By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/09 16:18:28 by latahbah          #+#    #+#              #
-#    Updated: 2022/02/24 17:57:05 by latahbah         ###   ########.fr        #
+#    Updated: 2023/01/16 17:44:34 by latahbah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
+MLX	= mlx/libmlx.a
 
 LIST =	main.c				end.c 					render_frame.c \
 		get_next_line.c		get_next_line_utils.c 	init.c \
@@ -27,9 +29,9 @@ COLOR 		=  \033[0;32m
 NO_COLOR 	=	\033[0m 
 
 OPTFLAGS = -O2
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
-all: $(NAME)
+all: $(NAME) $(MLX)
 
 $(NAME)::
 	@cd libft_new && make
@@ -37,6 +39,9 @@ $(NAME)::
 $(NAME):: $(OBJ)
 	@gcc $(FLAGS) $(OPTFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit $(LIB) -I. -o $(NAME)
 	@echo "$(COLOR)SO_LONG - OK$(NO_COLOR)"
+
+$(MLX):
+	@make -s -C $(MLX_PATH)
 	
 
 %.o : %.c

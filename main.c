@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:30:45 by latahbah          #+#    #+#             */
-/*   Updated: 2022/02/24 18:21:37 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:41:34 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	key_hook(int keycode, t_solong *sl)
 		draw_map(sl);
 		sl->start++;
 	}
-	make_move(keycode, sl);
+	//make_move(keycode, sl);
 	return (0);
 }
 

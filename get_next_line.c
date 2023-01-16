@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:16:57 by latahbah          #+#    #+#             */
-/*   Updated: 2022/02/18 17:09:55 by latahbah         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:45:34 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			r;
 
-	if (fd < 0 || BUFFER_SIZE < 1 || OPEN_MAX < fd)
+	if (fd < 0 || BUFFER_SIZE < 1 || FOPEN_MAX < fd)
 		return (NULL);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (buf == NULL)
