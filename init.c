@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:42:57 by latahbah          #+#    #+#             */
-/*   Updated: 2022/02/23 15:58:09 by latahbah         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:55:59 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,4 @@ t_solong	*sl_init(char **map)
 	sl->start = 0;
 	return (sl);
 }
+
